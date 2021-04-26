@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text">
+        <select type="text">
+            <option value="0">San</option>
+            {% for q in quest %}
+            <option value="{{q.id}}">{{q.question}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+    {% for q in quest %}
+    <li >{{q.question}}</li>
+    {% endfor %}
+    {% for q in ans %}
+    <li >{{q.user_results}}</li>
+    {% endfor %}
+</body>
+</html>
