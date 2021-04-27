@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, Http404
 from .forms import *
-from .models import User_results, AppUsers, Questions, Results
+from .models import User_results, Questions, Results
 
 
 def login(request):

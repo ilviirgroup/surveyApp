@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Results, Questions, AppUsers, User_results
-from .serializers import ResultSerializer, QuestionSerializer, UserSerializer, UserResultSerializer
+from .models import Results, Questions, User_results
+from .serializers import ResultSerializer, QuestionSerializer, UserResultSerializer
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 
@@ -41,18 +41,6 @@ class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
     name = 'questions-detail'
 
 
-class UserList(generics.ListCreateAPIView):
-    queryset = AppUsers.objects.all()
-    serializer_class = UserSerializer
-    name = 'appusers-list'
-
-
-class UserDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = AppUsers.objects.all()
-    serializer_class = UserSerializer
-    name = 'appusers-detail'
-
-
 class ApiRoot(generics.GenericAPIView):
     name = 'Test'
 
@@ -61,5 +49,4 @@ class ApiRoot(generics.GenericAPIView):
             'result': reverse(ResultList.name, request=request),
             'user_result': reverse(UserResultList.name, request=request),
             'question': reverse(QuestionList.name, request=request),
-            'user': reverse(UserList.name, request=request)
         })

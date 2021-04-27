@@ -21,11 +21,6 @@ class Results(models.Model):
 class User_results(models.Model):
     user_results = models.CharField(max_length=1000, null=True)
     user_question = models.CharField(null=True, max_length=1000)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-
+    
     def __str__(self):
         return self.results
-
-
-class AppUsers(AbstractUser):
-    phone = models.IntegerField(null=True)

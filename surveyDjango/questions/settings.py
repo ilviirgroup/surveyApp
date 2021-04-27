@@ -82,16 +82,7 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'surveyapp',
-#         'USER': 'postgres',
-#         'PASSWORD': 'survey',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -129,4 +120,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-AUTH_USER_MODEL = 'app.AppUsers'
